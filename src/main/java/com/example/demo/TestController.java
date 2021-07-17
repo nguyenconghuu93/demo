@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
     @GetMapping("test")
     public ResponseEntity<?> test() {
-        return ResponseEntity.status(HttpStatus.OK).body("demo huunc");
+        Response response = new Response();
+        response.setMessage("feature 2");
+        response.setErrorCode("00000");
+        return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 }
